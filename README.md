@@ -33,7 +33,7 @@ git clone https://github.com/robertian/vim-init.git
 sudo apt install build-essential cmake python3-dev
 git clone https://github.com/ycm-core/YouCompleteMe.git
 cd ~/.vim/bundles/YouCompleteMe
-git submodule updata --init --recursive
+git submodule update --init --recursive
 python3 install.py --clangd-completer
 
 #  error: RPC failed; curl 18 transfer closed with outstanding read data remaining
