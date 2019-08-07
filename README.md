@@ -33,16 +33,18 @@ git clone https://github.com/robertian/vim-init.git
 
 #  if git submodule update, the network don't work, copy third_party
 sudo apt install build-essential cmake python3-dev
-git clone https://github.com/ycm-core/YouCompleteMe.git
 cd ~/.vim/bundles/YouCompleteMe
 git submodule update --init --recursive
 #or
 sudo cp -rf ~/.setup/linux_set/third_party ~/.vim/bundles/YouCompareMe
 python3 install.py --clangd-completer
 
-
 #  error: RPC failed; curl 18 transfer closed with outstanding read data remaining
 #  fatal: The remote end hung up unexpectedly
 #  fatal: early EOF
 #  fatal: index-pack failed
 git config --global http.postBuffer 724288000
+
+#  add SourceCodePro font 
+#  set term param
+sudo cp -rf ~/.setup/linux_set/SourceCodePro /usr/share/fonts/
