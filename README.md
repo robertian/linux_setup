@@ -48,3 +48,21 @@ git config --global http.postBuffer 724288000
 #  add SourceCodePro font 
 #  set term param
 sudo cp -rf ~/.setup/linux_set/SourceCodePro /usr/share/fonts/
+
+# gtags
+# 安装编译依赖的库
+sudo apt build-dep global
+sudo apt install libncurses5-dev libncursesw5-dev
+
+# 从 GNU GLOBAL 官方下载最新的 tar.gz 包并解压到源码目录
+wget https://ftp.gnu.org/pub/gnu/global/global-6.6.3.tar.gz
+
+# untar
+sudo tar -xvf global-6.6.3.tar.gz
+
+# 在解压后的源码目录编译安装
+./configure
+make
+sudo make install
+# 只写 C/C++/Java 的话，那么到这里就够了，gtags 原生支持。如想要更多语言，那么 gtags 是支持使用 ctags/universal-ctags 或者 pygments 来作为分析前端支持 50+ 种语言。使用 ctags/universal-ctags 作为前端只能生成定义索引不能生成引用索引，因此我们要安装 pygments ，保证你的 $PATH 里面有 python，接着：
+pip install pygments
